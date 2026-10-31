@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genius Students | Learn & Achieve</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fc;
+  color: #17243d;
+}
+
+header {
+  background: #071a35;
+  color: white;
+  padding: 20px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+  color: #e8bd52;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 8px;
+  font-size: 14px;
+}
+
+.lang {
+  background: #e8bd52;
+  border: none;
+  padding: 9px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.hero {
+  background: linear-gradient(135deg,#071a35,#123f70);
+  color: white;
+  text-align: center;
+  padding: 85px 20px;
+}
+
+.hero h1 {
+  font-size: 38px;
+  margin-bottom: 18px;
+}
+
+.hero p {
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 650px;
+  margin: auto;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 13px 25px;
+  background: #e8bd52;
+  color: #071a35;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section {
+  padding: 55px 7%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 28px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px #0000000c;
+  text-align: center;
+  border-bottom: 3px solid #e8bd52;
+}
+
+.card .icon {
+  font-size: 38px;
+}
+
+.card h3 {
+  margin: 15px 0 10px;
+  color: #123f70;
+}
+
+.card p {
+  line-height: 1.6;
+  color: #657187;
+}
+
+footer {
+  background: #071a35;
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+  line-height: 2;
+}
+
+@media(max-width:600px) {
+  .hero h1 {font-size: 29px;}
+  header {justify-content: center;}
+  nav {text-align: center;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🎓 Genius Students</div>
+
+  <nav>
+    <a href="#home" data-en="Home" data-am="መነሻ">Home</a>
+    <a href="#courses" data-en="Courses" data-am="ትምህርቶች">Courses</a>
+    <a href="#about" data-en="About" data-am="ስለ እኛ">About</a>
+  </nav>
+
+  <button class="lang" onclick="toggleLanguage()">አማርኛ</button>
+</header>
+
+<div class="hero" id="home">
+  <h1 id="welcome">Welcome to Genius Students</h1>
+
+  <p id="description">
+    Your journey to knowledge and success starts here.
+    Learn, practice, and achieve your dreams.
+  </p>
+
+  <a href="#courses" class="btn" id="explore">
+    Explore Courses
+  </a>
+</div>
+
+<section id="courses">
+  <h2 class="section-title" id="courseTitle">
+    Our Learning Platform
+  </h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">📚</div>
+      <h3 id="notes">Study Notes</h3>
+      <p id="notesText">Grade 9–12 educational notes and resources.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎬</div>
+      <h3 id="videos">Video Lessons</h3>
+      <p id="videosText">Learn through educational video lessons.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📝</div>
+      <h3 id="exams">Tests & Exams</h3>
+      <p id="examsText">Practice questions, quizzes and examinations.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">👨‍🎓</div>
+      <h3 id="profile">Student Profiles</h3>
+      <p id="profileText">Track your learning progress and achievements.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🏆</div>
+      <h3 id="scholarships">Scholarships</h3>
+      <p id="scholarshipText">Discover educational opportunities.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">💻</div>
+      <h3 id="technology">Technology</h3>
+      <p id="technologyText">Develop digital and computer skills.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-title" id="aboutTitle">
+    About Genius Students
+  </h2>
+  <p id="aboutText" style="text-align:center;line-height:1.8">
+    Genius Students is an educational platform designed
+    to support Grade 9–12 students through quality learning
+    resources and digital education.
+  </p>
+</section>
+
+<footer>
+  <h3>🎓 Genius Students</h3>
+  <p id="footerText">Learn Today. Lead Tomorrow.</p>
+  <p>© 2026 Genius Students. All rights reserved.</p>
+</footer>
+
+<script>
+let language = "en";
+
+const translations = {
+  am: {
+    welcome: "እንኳን ወደ Genius Students በደህና መጡ",
+    description: "የእውቀትና የስኬት ጉዞዎ እዚህ ይጀምራል። ይማሩ፣ ይለማመዱ፣ ህልሞችዎን ያሳኩ።",
+    explore: "ትምህርቶችን ይመልከቱ",
+    courseTitle: "የትምህርት መድረካችን",
+    notes: "የትምህርት ማስታወሻዎች",
+    notesText: "የ9–12ኛ ክፍል ማስታወሻዎችና መርጃዎች።",
+    videos: "የቪዲዮ ትምህርቶች",
+    videosText: "በቪዲዮ ትምህርቶች ይማሩ።",
+    exams: "ፈተናዎች",
+    examsText: "የልምምድ ጥያቄዎችና ፈተናዎች።",
+    profile: "የተማሪ መገለጫ",
+    profileText: "የትምህርት እድገትዎን ይከታተሉ።",
+    scholarships: "ስኮላርሺፖች",
+    scholarshipText: "የትምህርት ዕድሎችን ያግኙ።",
+    technology: "ቴክኖሎጂ",
+    technologyText: "የኮምፒውተርና ዲጂታል ክህሎቶችን ያዳብሩ።",
+    aboutTitle: "ስለ Genius Students",
+    aboutText: "Genius Students የ9–12ኛ ክፍል ተማሪዎችን በጥራት የትምህርት መርጃዎች ለመደገፍ የተዘጋጀ መድረክ ነው።",
+    footerText: "ዛሬ ተማር። ነገ መሪ ሁን።"
+  }
+};
+
+function toggleLanguage() {
+  language = language === "en" ? "am" : "en";
+
+  document.querySelectorAll("[data-en]").forEach(item => {
+    item.textContent = item.dataset[language];
+  });
+
+  Object.keys(translations.am).forEach(id => {
+    document.getElementById(id).textContent =
+      language === "am" ? translations.am[id] :
+      document.getElementById(id).dataset.original;
+  });
+
+  document.querySelector(".lang").textContent =
+    language === "en" ? "አማርኛ" : "English";
+}
+
+Object.keys(translations.am).forEach(id => {
+  const item = document.getElementById(id);
+  item.dataset.original = item.textContent;
+});
+</script>
+
+</body>
+</html>
