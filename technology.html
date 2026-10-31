@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technology | Genius Students</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f3f6fb;color:#14233d}
+header{background:#071a35;color:white;text-align:center;padding:28px 15px}
+header h1{color:#e8bd52}
+header a{color:#e8bd52}
+main{max-width:900px;margin:auto;padding:20px}
+.intro{background:#123f70;color:white;padding:25px;border-radius:14px}
+.card{background:white;padding:22px;border-radius:12px;margin:18px 0;box-shadow:0 3px 15px #0001}
+.card h2{color:#123f70}
+button{background:#123f70;color:white;border:0;padding:12px 18px;border-radius:7px;cursor:pointer}
+.lesson{display:none;background:#f0f4fa;padding:15px;border-radius:8px;margin-top:12px}
+code{background:#e8edf5;padding:3px 6px;border-radius:4px}
+footer{background:#071a35;color:white;text-align:center;padding:20px;margin-top:30px}
+</style>
+</head>
+<body>
+
+<header>
+<h1>💻 Genius Students</h1>
+<p>Technology & Computer Skills Center</p>
+<a href="index.html">← Back to Home</a>
+</header>
+
+<main>
+<section class="intro">
+<h2>Learn Technology. Build Your Future.</h2>
+<p>Start learning programming, web development and digital skills step by step.</p>
+</section>
+
+<div class="card">
+<h2>🌐 HTML — Web Structure</h2>
+<p>Learn how to create the structure of websites.</p>
+<button onclick="showLesson('htmlLesson')">Explore Lesson</button>
+<div class="lesson" id="htmlLesson">
+<h3>Your First HTML Page</h3>
+<pre><code>&lt;h1&gt;Hello World!&lt;/h1&gt;
+&lt;p&gt;Welcome to my website.&lt;/p&gt;</code></pre>
+<p>HTML uses elements to organize headings, paragraphs, images and links.</p>
+</div>
+</div>
+
+<div class="card">
+<h2>🎨 CSS — Web Design</h2>
+<p>Learn colors, layouts, spacing and responsive design.</p>
+<button onclick="showLesson('cssLesson')">Explore Lesson</button>
+<div class="lesson" id="cssLesson">
+<h3>Your First CSS Rule</h3>
+<pre><code>body {
+  background: navy;
+  color: white;
+}</code></pre>
+<p>CSS controls how a website looks.</p>
+</div>
+</div>
+
+<div class="card">
+<h2>⚙️ JavaScript — Programming</h2>
+<p>Learn how to make websites interactive.</p>
+<button onclick="showLesson('jsLesson')">Explore Lesson</button>
+<div class="lesson" id="jsLesson">
+<h3>Your First JavaScript</h3>
+<pre><code>function greet() {
+  alert("Hello Student!");
+}</code></pre>
+<p>JavaScript adds behavior and interactivity to websites.</p>
+</div>
+</div>
+
+<div class="card">
+<h2>🐍 Python — Programming Basics</h2>
+<p>Learn variables, conditions, loops and functions.</p>
+<button onclick="showLesson('pythonLesson')">Explore Lesson</button>
+<div class="lesson" id="pythonLesson">
+<h3>Your First Python Program</h3>
+<pre><code>name = "Student"
+print("Hello", name)</code></pre>
+<p>Python is a popular programming language used in many fields.</p>
+</div>
+</div>
+
+<div class="card">
+<h2>🧠 Digital Skills</h2>
+<ul>
+<li>Computer fundamentals</li>
+<li>Internet and online research</li>
+<li>Typing and document preparation</li>
+<li>Digital safety and privacy</li>
+<li>Problem-solving skills</li>
+</ul>
+</div>
+
+</main>
+
+<footer>
+<h3>Genius Students</h3>
+<p>Learn Today. Lead Tomorrow.</p>
+</footer>
+
+<script>
+function showLesson(id){
+ const lesson=document.getElementById(id);
+ lesson.style.display=
+ lesson.style.display==="block"?"none":"block";
+}
+</script>
+
+</body>
+</html>
