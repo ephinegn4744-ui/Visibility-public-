@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video Lessons | Genius Students</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial;background:#f4f6fb;color:#14233d}
+header{background:#071a35;color:white;text-align:center;padding:25px}
+header h1{color:#e8bd52}
+header p{margin:10px}
+a{color:#e8bd52}
+main{max-width:950px;margin:auto;padding:25px 16px}
+h2{text-align:center;margin:25px 0}
+.grades,.subjects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+button{padding:16px;border:1px solid #e8bd52;background:white;border-radius:9px;font-weight:bold;color:#123f70;cursor:pointer}
+button.active{background:#123f70;color:white}
+.subjects{grid-template-columns:repeat(auto-fit,minmax(120px,1fr))}
+#lesson{background:white;border-radius:12px;padding:22px;margin-top:25px;text-align:center}
+.video-placeholder{background:#071a35;color:white;padding:45px 10px;border-radius:10px;margin:15px 0}
+footer{background:#071a35;color:white;text-align:center;padding:25px;margin-top:40px}
+</style>
+</head>
+<body>
+<header>
+<h1>🎓 Genius Students</h1>
+<p>Video Learning Center</p>
+<a href="index.html">← Back to Home</a>
+</header>
+
+<main>
+<h2>Select Your Grade</h2>
+<div class="grades">
+<button class="active" onclick="selectGrade(9,this)">Grade 9</button>
+<button onclick="selectGrade(10,this)">Grade 10</button>
+<button onclick="selectGrade(11,this)">Grade 11</button>
+<button onclick="selectGrade(12,this)">Grade 12</button>
+</div>
+
+<h2>Select Subject</h2>
+<div class="subjects">
+<button class="active" onclick="selectSubject('Biology',this)">Biology</button>
+<button onclick="selectSubject('Physics',this)">Physics</button>
+<button onclick="selectSubject('Chemistry',this)">Chemistry</button>
+<button onclick="selectSubject('Mathematics',this)">Mathematics</button>
+<button onclick="selectSubject('English',this)">English</button>
+<button onclick="selectSubject('ICT',this)">ICT</button>
+</div>
+
+<div id="lesson">
+<h2 id="title">Grade 9 Biology Lessons</h2>
+<div class="video-placeholder">
+<h2>🎬</h2>
+<p>Video lessons will appear here.</p>
+</div>
+<p id="description">Choose a grade and subject to explore lessons.</p>
+</div>
+</main>
+
+<footer>
+<h3>Genius Students</h3>
+<p>Learn Today. Lead Tomorrow.</p>
+</footer>
+
+<script>
+let grade=9;
+let subject="Biology";
+
+function selectGrade(g,b){
+grade=g;
+document.querySelectorAll(".grades button").forEach(x=>x.classList.remove("active"));
+b.classList.add("active");
+update();
+}
+
+function selectSubject(s,b){
+subject=s;
+document.querySelectorAll(".subjects button").forEach(x=>x.classList.remove("active"));
+b.classList.add("active");
+update();
+}
+
+function update(){
+document.getElementById("title").textContent=
+"Grade "+grade+" "+subject+" Lessons";
+document.getElementById("description").textContent=
+"Selected: Grade "+grade+" — "+subject+". Video lessons will be added here.";
+}
+</script>
+</body>
+</html>
