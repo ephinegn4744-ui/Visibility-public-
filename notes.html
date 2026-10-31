@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Notes | Genius Students</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f4f6fb;color:#14233d}
+header{background:#071a35;color:white;padding:22px;text-align:center}
+header h1{color:#e8bd52}
+header p{margin-top:8px}
+.back{display:inline-block;color:#e8bd52;margin-top:12px}
+main{max-width:950px;margin:auto;padding:25px 16px}
+h2{text-align:center;margin:20px 0}
+.grades{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.grade{padding:22px;border:2px solid #e8bd52;background:white;border-radius:12px;font-size:19px;font-weight:bold;color:#123f70;cursor:pointer}
+.grade.active{background:#123f70;color:white}
+.subjects{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-top:18px}
+.subject{background:white;border:1px solid #ddd;border-radius:10px;padding:18px 8px;text-align:center;cursor:pointer;font-weight:bold}
+.subject.active{background:#e8bd52;color:#071a35}
+#results{margin-top:25px;background:white;padding:20px;border-radius:12px}
+.note{padding:16px;border-bottom:1px solid #ddd}
+.note h3{color:#123f70;margin-bottom:8px}
+.note p{color:#657187;line-height:1.5}
+.note a{display:inline-block;margin-top:10px;color:#123f70;font-weight:bold}
+footer{text-align:center;padding:25px;background:#071a35;color:white;margin-top:35px}
+button{font-family:inherit}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🎓 Genius Students</h1>
+<p>Study Notes — Grade 9 to 12</p>
+<a class="back" href="index.html">← Back to Home</a>
+</header>
+
+<main>
+<h2>Select Your Grade</h2>
+<div class="grades">
+<button class="grade active" onclick="chooseGrade(9,this)">Grade 9</button>
+<button class="grade" onclick="chooseGrade(10,this)">Grade 10</button>
+<button class="grade" onclick="chooseGrade(11,this)">Grade 11</button>
+<button class="grade" onclick="chooseGrade(12,this)">Grade 12</button>
+</div>
+
+<h2>Select Your Subject</h2>
+<div class="subjects">
+<button class="subject active" onclick="chooseSubject('Biology',this)">🧬 Biology</button>
+<button class="subject" onclick="chooseSubject('Physics',this)">⚛️ Physics</button>
+<button class="subject" onclick="chooseSubject('Chemistry',this)">🧪 Chemistry</button>
+<button class="subject" onclick="chooseSubject('Mathematics',this)">📐 Mathematics</button>
+<button class="subject" onclick="chooseSubject('English',this)">📖 English</button>
+<button class="subject" onclick="chooseSubject('ICT',this)">💻 ICT</button>
+</div>
+
+<div id="results">
+<h2 id="heading">Grade 9 Biology</h2>
+<div id="notesList">
+<div class="note">
+<h3>Study Materials Coming Soon</h3>
+<p>Educational notes and downloadable PDF resources will be added here.</p>
+</div>
+</div>
+</div>
+</main>
+
+<footer>
+<h3>Genius Students</h3>
+<p>Learn Today. Lead Tomorrow.</p>
+</footer>
+
+<script>
+let grade=9;
+let subject="Biology";
+
+function chooseGrade(g,button){
+grade=g;
+document.querySelectorAll(".grade").forEach(b=>b.classList.remove("active"));
+button.classList.add("active");
+update();
+}
+
+function chooseSubject(s,button){
+subject=s;
+document.querySelectorAll(".subject").forEach(b=>b.classList.remove("active"));
+button.classList.add("active");
+update();
+}
+
+function update(){
+document.getElementById("heading").textContent=
+"Grade "+grade+" "+subject;
+document.getElementById("notesList").innerHTML=
+'<div class="note"><h3>'+subject+' — Grade '+grade+'</h3>'+
+'<p>Study notes and learning materials for Grade '+grade+
+' '+subject+' will be published here.</p></div>';
+}
+</script>
+</body>
+</html>
