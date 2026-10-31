@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student Profile | Genius Students</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f2f5fa;
+  color:#14233d;
+}
+header{
+  background:#071a35;
+  color:white;
+  text-align:center;
+  padding:25px 15px;
+}
+header h1{color:#e8bd52}
+header a{color:#e8bd52}
+main{max-width:650px;margin:auto;padding:20px}
+.card{
+  background:white;
+  padding:24px;
+  border-radius:14px;
+  margin:20px 0;
+  box-shadow:0 3px 15px #0001;
+}
+label{display:block;margin-top:15px;font-weight:bold}
+input,select,textarea{
+  width:100%;
+  padding:13px;
+  margin-top:7px;
+  border:1px solid #ccd3df;
+  border-radius:8px;
+  font-size:16px;
+}
+button{
+  background:#123f70;
+  color:white;
+  border:0;
+  padding:13px 20px;
+  border-radius:8px;
+  margin-top:18px;
+  font-size:16px;
+  cursor:pointer;
+}
+#preview{display:none;border-top:4px solid #e8bd52}
+.avatar{font-size:55px;text-align:center}
+footer{text-align:center;padding:20px;color:#667}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🎓 Genius Students</h1>
+<p>Student Profile Center</p>
+<a href="index.html">← Back to Home</a>
+</header>
+
+<main>
+<div class="card">
+<h2>👨‍🎓 Create Your Learning Profile</h2>
+<p>Introduce yourself as a learner.</p>
+
+<form id="profileForm">
+<label>Display Name / Nickname</label>
+<input id="studentName" type="text"
+placeholder="Enter a nickname" required maxlength="30">
+
+<label>Select Grade</label>
+<select id="grade">
+<option>Grade 9</option>
+<option>Grade 10</option>
+<option>Grade 11</option>
+<option>Grade 12</option>
+</select>
+
+<label>Favorite Subject</label>
+<select id="subject">
+<option>Biology</option>
+<option>Physics</option>
+<option>Chemistry</option>
+<option>Mathematics</option>
+<option>English</option>
+<option>ICT</option>
+</select>
+
+<label>My Learning Goal</label>
+<textarea id="goal" rows="3"
+placeholder="What do you want to learn?"
+maxlength="200"></textarea>
+
+<button type="submit">Create Profile</button>
+</form>
+</div>
+
+<div class="card" id="preview">
+<div class="avatar">🎓</div>
+<h2 id="showName"></h2>
+<p id="showGrade"></p>
+<p id="showSubject"></p>
+<p id="showGoal"></p>
+<button onclick="resetProfile()">Create Another Profile</button>
+</div>
+</main>
+
+<footer>
+<h3>Genius Students</h3>
+<p>Learn Today. Lead Tomorrow.</p>
+</footer>
+
+<script>
+document.getElementById("profileForm")
+.addEventListener("submit",function(e){
+  e.preventDefault();
+
+  document.getElementById("showName").textContent =
+    document.getElementById("studentName").value;
+
+  document.getElementById("showGrade").textContent =
+    "Grade: "+document.getElementById("grade").value;
+
+  document.getElementById("showSubject").textContent =
+    "Favorite Subject: "+document.getElementById("subject").value;
+
+  document.getElementById("showGoal").textContent =
+    "Learning Goal: "+
+    (document.getElementById("goal").value || "Keep learning!");
+
+  document.getElementById("preview").style.display="block";
+  document.getElementById("preview").scrollIntoView();
+});
+
+function resetProfile(){
+  document.getElementById("profileForm").reset();
+  document.getElementById("preview").style.display="none";
+}
+</script>
+
+</body>
+</html>
